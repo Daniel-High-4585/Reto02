@@ -13,5 +13,41 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <form [formGroup]="myForm">
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-sx="12">
+          <div>
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <label>Nombre: </label>
+              <ion-input formControlName="name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <label>Curp: </label>
+              <ion-input formControlName="curp" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <label>Numero de Control: </label>
+              <ion-input formControlName="controlnumber" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <label >Edad: </label>
+              <ion-input formControlName="age" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Activo</ion-label>
+              <ion-toggle formControlName="active" color="secondary"></ion-toggle>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="button" [disabled]="!myForm.valid"  
+            (click)="create()" expand="block">Guardar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
 </ion-content>
