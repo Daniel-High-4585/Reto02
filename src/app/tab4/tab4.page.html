@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
       <ion-title>
-          Estudiantes activos
+          Estudiantes inactivos
       </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,7 @@
 
   <ion-list>
       <ion-item-sliding *ngFor="let student of students">
-          <div *ngIf="student.active">
+          <div *ngIf="!student.active">
               <ion-item-options side="start">
                   <ion-item-option color="secondary">
                       <ion-icon name="checkmarck"></ion-icon>
@@ -20,8 +20,8 @@
                   <ion-label>
                       <h2>
                           <strong>{{student.name}}</strong>
-                          <ion-chip color="secondary" class="ion-float-right">
-                              <ion-label>Activo</ion-label>
+                          <ion-chip color="danger" class="ion-float.right">
+                              <ion-label>Inactivo</ion-label>
                           </ion-chip>
                       </h2>
                       <h3>{{student.controlnumber}}</h3>
